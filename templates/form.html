@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Flower Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label, input {
+            display: block;
+            margin-top: 10px;
+            width: 100%;
+        }
+        input[type="number"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        h3 {
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Iris Classifier</h2>
+        <form method="post">
+            <label>Sepal Length</label>
+            <input type="number" step="any" name="sepal_length" required>
+
+            <label>Sepal Width</label>
+            <input type="number" step="any" name="sepal_width" required>
+
+            <label>Petal Length</label>
+            <input type="number" step="any" name="petal_length" required>
+
+            <label>Petal Width</label>
+            <input type="number" step="any" name="petal_width" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+        <h3>Predicted Species: {{ result }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
