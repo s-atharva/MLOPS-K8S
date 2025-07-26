@@ -4,7 +4,7 @@ from fastapi.templating import Jinja2Templates
 import numpy as np
 import pickle
 import os
-import pandas as pd
+
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
