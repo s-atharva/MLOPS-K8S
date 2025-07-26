@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iris-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: iris-app
+  template:
+    metadata:
+      labels:
+        app: iris-app
+    spec:
+      containers:
+        - name: iris-container
+          image: atharva288/iris_docker_demo:latest
+          ports:
+            - containerPort: 8000
